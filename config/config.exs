@@ -4,11 +4,16 @@
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
 # missaoespecial
+# embuscadoproximonivel
 # General application configuration
 use Mix.Config
 
 config :inmana,
   ecto_repos: [Inmana.Repo]
+
+config :inmana, Inmana.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
 
 # Configures the endpoint
 config :inmana, InmanaWeb.Endpoint,
